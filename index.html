@@ -200,64 +200,166 @@ h1.hero-title .it{font-style:italic}
 .sp:hover{border-color:rgba(147,51,234,.4);color:var(--p)}
 
 /* CONTACT */
-.contact-wrap{
-  background:var(--bg2);border:1px solid var(--border);
-  border-radius:20px;padding:4rem;
-  display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;
-  position:relative;overflow:hidden;
+.contact-wrap {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 3.5rem;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
 }
-.contact-wrap::before{
-  content:'';position:absolute;top:-60px;right:-60px;
-  width:240px;height:240px;border-radius:50%;
-  background:radial-gradient(circle,rgba(147,51,234,.06) 0%,transparent 70%);
-  pointer-events:none;
+.contact-wrap::before {
+  content: '';
+  position: absolute;
+  top: -100px;
+  right: -100px;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(147, 51, 234, 0.08) 0%, transparent 70%);
+  pointer-events: none;
 }
-.contact-title{font-family:'Archivo',sans-serif;font-size:clamp(2rem,3.5vw,3rem);font-weight:900;letter-spacing:-.03em;line-height:1.05;margin-bottom:1rem}
-.contact-title .g{background:var(--grad2);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
-.contact-sub{font-size:.9rem;color:var(--muted);line-height:1.75}
-.contact-links{display:flex;flex-direction:column;gap:.75rem}
-.clink{
-  display:flex;align-items:center;justify-content:space-between;
-  padding:1rem 1.3rem;background:var(--bg);border:1px solid var(--border);
-  border-radius:10px;transition:border-color .25s,background .2s;
+.contact-content {
+  max-width: 440px;
 }
-.clink:hover{border-color:rgba(147,51,234,.35);background:var(--bg3)}
-.clink-l{display:flex;align-items:center;gap:.9rem}
-.clink-icon{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:.85rem;flex-shrink:0}
-.ci1{background:rgba(147,51,234,.08)}
-.ci2{background:rgba(17,17,17,.05)}
-.ci3{background:rgba(219,39,119,.07)}
-.ci4{background:rgba(22,163,74,.07)}
-.clink-name{font-size:.84rem;font-weight:700;font-family:'Archivo',sans-serif}
-.clink-val{font-size:.72rem;color:var(--muted)}
-.clink-arr{font-size:.85rem;color:var(--border);transition:color .2s}
-.clink:hover .clink-arr{color:var(--p)}
+.contact-title {
+  font-family: 'Archivo', sans-serif;
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  font-weight: 900;
+  letter-spacing: -.04em;
+  line-height: 1.1;
+  margin-bottom: 1.25rem;
+}
+.contact-title .g {
+  background: var(--grad2);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.contact-sub {
+  font-size: 1rem;
+  color: var(--text2);
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+.contact-links {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: .75rem;
+}
+.clink {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.1rem 1.4rem;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  transition: all .25s cubic-bezier(.2, 1, .3, 1);
+}
+.clink:hover {
+  border-color: var(--p);
+  background: var(--bg);
+  transform: translateX(4px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.04);
+}
+.clink-l {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.clink-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  flex-shrink: 0;
+  transition: transform .2s;
+}
+.clink:hover .clink-icon {
+  transform: scale(1.1);
+}
+.ci1 { background: rgba(147, 51, 234, 0.1); color: #9333ea; }
+.ci2 { background: rgba(0, 0, 0, 0.05); color: var(--text); }
+.ci3 { background: rgba(37, 99, 235, 0.1); color: #2563eb; }
+.clink-info {
+  display: flex;
+  flex-direction: column;
+}
+.clink-name {
+  font-size: .85rem;
+  font-weight: 700;
+  font-family: 'Archivo', sans-serif;
+  color: var(--text);
+}
+.clink-val {
+  font-size: .75rem;
+  color: var(--muted);
+  word-break: break-all;
+}
+.clink-arr {
+  font-size: 1rem;
+  color: var(--border);
+  transition: all .2s;
+}
+.clink:hover .clink-arr {
+  color: var(--p);
+  transform: translateX(2px);
+}
 
 /* FOOTER */
-footer{border-top:1px solid var(--border);padding:2rem 0;margin-top:5rem}
-.footer-inner{display:flex;justify-content:space-between;align-items:center}
-.footer-logo{font-family:'Archivo',sans-serif;font-weight:900;font-size:.9rem}
-.footer-logo .g{background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
-footer p{font-size:.75rem;color:var(--muted)}
+footer {
+  border-top: 1px solid var(--border);
+  padding: 3rem 0;
+  margin-top: 6rem;
+}
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer-logo {
+  font-family: 'Archivo', sans-serif;
+  font-weight: 900;
+  font-size: 1rem;
+  letter-spacing: -.01em;
+}
+.footer-logo .g {
+  background: var(--grad);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+footer p {
+  font-size: .8rem;
+  color: var(--muted);
+}
 
 /* REVEAL */
-.reveal{opacity:0;transform:translateY(20px);transition:opacity .65s cubic-bezier(.2,1,.3,1),transform .65s cubic-bezier(.2,1,.3,1)}
-.reveal.in{opacity:1;transform:none}
-.d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}
+.reveal { opacity: 0; transform: translateY(20px); transition: opacity .65s cubic-bezier(.2, 1, .3, 1), transform .65s cubic-bezier(.2, 1, .3, 1); }
+.reveal.in { opacity: 1; transform: none; }
+.d1 { transition-delay: .08s; } .d2 { transition-delay: .16s; } .d3 { transition-delay: .24s; }
 
 /* RESPONSIVE */
-@media(max-width:780px){
-  h1.hero-title{letter-spacing:-.03em}
-  .hero-row{grid-template-columns:1fr;gap:2rem}
-  .hero-right{align-items:flex-start}
-  .hero-pills{justify-content:flex-start}
-  .stats-row{grid-template-columns:1fr 1fr}
-  .exp-grid{grid-template-columns:1fr}
-  .skills-grid{grid-template-columns:1fr 1fr}
-  .contact-wrap{grid-template-columns:1fr;gap:2.5rem;padding:2.5rem}
-  .proj-item{grid-template-columns:1fr}
-  .proj-arrow{display:none}
-  .nav-links{display:none}
+@media(max-width: 820px) {
+  h1.hero-title { letter-spacing: -.03em; }
+  .hero-row { grid-template-columns: 1fr; gap: 2.5rem; }
+  .hero-right { align-items: flex-start; }
+  .hero-pills { justify-content: flex-start; }
+  .stats-row { grid-template-columns: 1fr 1fr; }
+  .exp-grid { grid-template-columns: 1fr; }
+  .skills-grid { grid-template-columns: 1fr 1fr; }
+  .contact-wrap { grid-template-columns: 1fr; gap: 3rem; padding: 2.5rem; }
+  .contact-content { max-width: 100%; text-align: center; }
+  .contact-links { max-width: 400px; margin: 0 auto; width: 100%; }
+  .footer-inner { flex-direction: column; gap: 1.5rem; text-align: center; }
 }
 </style>
 </head>
@@ -349,9 +451,9 @@ footer p{font-size:.75rem;color:var(--muted)}
         <div class="proj-body">
           <div class="proj-badge">SaaS Platform</div>
           <div class="proj-name">Planifie</div>
-          <div class="proj-desc">Solution intelligente de gestion et planification de projets. Collaboration en temps réel, interface pensée pour la productivité.</div>
+          <div class="proj-desc">Solution intelligente de gestion et de planification de projets. Collaboration en temps réel, interface conçue et développée de A à Z.</div>
           <div class="proj-stack">
-            <span class="ps">Next.js</span><span class="ps">React</span><span class="ps">Node.js</span><span class="ps">PostgreSQL</span><span class="ps">WebSocket</span>
+            <span class="ps">Next.js</span><span class="ps">React</span><span class="ps">Node.js</span><span class="ps">PostgreSQL</span>
           </div>
         </div>
       </a>
@@ -569,7 +671,7 @@ footer p{font-size:.75rem;color:var(--muted)}
         <div class="skill-pills">
           <span class="sp">Node.js</span><span class="sp">Express.js</span><span class="sp">NestJS</span>
           <span class="sp">Python</span><span class="sp">Django</span>
-          <span class="sp">REST API</span><span class="sp">WebSocket</span>
+          <span class="sp">REST API</span>
         </div>
       </div>
       <div class="skill-block">
@@ -613,36 +715,38 @@ footer p{font-size:.75rem;color:var(--muted)}
   <div class="wrap">
     <span class="sec-label">Contact</span>
     <div class="contact-wrap reveal">
-      <div>
-        <h2 class="contact-title">Créons quelque chose<br><span class="g">ensemble.</span></h2>
-        <p class="contact-sub">Je réponds à chaque message sérieux sous 24h. Pas de bla-bla — juste une vraie conversation sur ce que vous voulez construire.</p>
+      <div class="contact-content">
+        <h2 class="contact-title">Parlons de votre prochain <span class="g">projet.</span></h2>
+        <p class="contact-sub">Je suis ouverte aux opportunités de collaboration et aux défis techniques stimulants. Réponse garantie sous 24h.</p>
       </div>
       <div class="contact-links">
-        <a href="mailto:maachoudouaa04@gmail.com" class="clink">
+        <a href="mailto:maachoudouaa@gmail.com" class="clink">
           <div class="clink-l">
             <div class="clink-icon ci1">✉</div>
-            <div><div class="clink-name">Email</div><div class="clink-val">maachoudouaa04@gmail.com</div></div>
+            <div class="clink-info">
+              <span class="clink-name">Email</span>
+              <span class="clink-val">maachoudouaa@gmail.com</span>
+            </div>
           </div>
           <div class="clink-arr">→</div>
         </a>
-        <a href="https://github.com/dua-x" target="_blank" class="clink">
-          <div class="clink-l">
-            <div class="clink-icon ci2">⌥</div>
-            <div><div class="clink-name">GitHub</div><div class="clink-val">github.com/dua-x</div></div>
-          </div>
-          <div class="clink-arr">→</div>
-        </a>
-        <a href="https://linkedin.com/in/maachou-douaa" target="_blank" class="clink">
+        <a href="https://linkedin.com/in/maachoudouaa" target="_blank" class="clink">
           <div class="clink-l">
             <div class="clink-icon ci3">◈</div>
-            <div><div class="clink-name">LinkedIn</div><div class="clink-val">linkedin.com/in/maachou-douaa</div></div>
+            <div class="clink-info">
+              <span class="clink-name">LinkedIn</span>
+              <span class="clink-val">linkedin.com/in/maachoudouaa</span>
+            </div>
           </div>
           <div class="clink-arr">→</div>
         </a>
-        <a href="#projects" class="clink">
+        <a href="https://github.com/maachoudouaa" target="_blank" class="clink">
           <div class="clink-l">
-            <div class="clink-icon ci4">◎</div>
-            <div><div class="clink-name">Portfolio</div><div class="clink-val">Voir mes travaux ↑</div></div>
+            <div class="clink-icon ci2">⌥</div>
+            <div class="clink-info">
+              <span class="clink-name">GitHub</span>
+              <span class="clink-val">github.com/maachoudouaa</span>
+            </div>
           </div>
           <div class="clink-arr">→</div>
         </a>
